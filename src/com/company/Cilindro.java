@@ -26,4 +26,19 @@ public class Cilindro extends Circulo{
     public double calcularVolumen(){
         return super.calcularArea()*this.altura;
     }
+
+    @Override
+    public double calcularArea(){
+        return 2* 3.14 * super.getRadio()*this.altura + 2 * super.calcularArea();
+    }
+    @Override
+    public String toString() {
+        return "Cilindro {" +
+                "radio=" + super.getRadio() +
+                ", color='" + super.getColor() +
+                ", altura=" + altura +
+                ", area=" + calcularArea()+
+                ", volumen=" + calcularVolumen() +
+                '}';
+    }
 }
